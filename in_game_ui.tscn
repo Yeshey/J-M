@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://6abaevn3ft4"]
+
+[ext_resource type="Texture2D" uid="uid://gw6e6gcbg7k5" path="res://media/UI Big Play Button.png" id="1_kenku"]
+[ext_resource type="Script" uid="uid://dtkdbcmcf871c" path="res://in_game_ui.gd" id="1_onc8m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onc8m"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(3, 34, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwbuu"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(99, 36, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6quo"]
+texture = ExtResource("1_kenku")
+region_rect = Rect2(99, 36, 90, 25)
+
+[node name="inGameUI" type="Control" unique_id=847103399]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onc8m")
+
+[node name="inGamePopup" type="MarginContainer" parent="." unique_id=191162044]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="inGamePopup" unique_id=783214159]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="mainMenu" type="MarginContainer" parent="." unique_id=874411119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="mainMenu" unique_id=1583460439]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.94036084, 0.87736744, 0.59855735, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="mainMenu/ColorRect" unique_id=227325816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/ColorRect/MarginContainer" unique_id=202476827]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/ColorRect/MarginContainer/HBoxContainer" unique_id=257003106]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="mainMenu/ColorRect/MarginContainer" unique_id=317195684]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainMenu/ColorRect/MarginContainer/VBoxContainer" unique_id=1568866023]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="mainMenu/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=626877234]
+custom_minimum_size = Vector2(90, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_onc8m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cwbuu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e6quo")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="mainMenu/ColorRect/MarginContainer/VBoxContainer" unique_id=460433836]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="mainMenu/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1418541704]
+custom_minimum_size = Vector2(90, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_onc8m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e6quo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e6quo")
+
+[connection signal="pressed" from="mainMenu/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://l1dhtqji1d6x"]
+
+[ext_resource type="Script" uid="uid://b8h0n3yu5o67v" path="res://player___character_body_2d.gd" id="1_3hls8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ilcil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hls8"]
+
+[node name="Level1" type="Node2D" unique_id=113173144]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1027119357]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1535765867]
+position = Vector2(33, 158)
+shape = SubResource("WorldBoundaryShape2D_ilcil")
+
+[node name="Player - CharacterBody2D" type="CharacterBody2D" parent="." unique_id=40078481]
+script = ExtResource("1_3hls8")
+
+[node name="ColorRect" type="ColorRect" parent="Player - CharacterBody2D" unique_id=689971363]
+offset_left = 8.0
+offset_top = -27.0
+offset_right = 28.0
+offset_bottom = -7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player - CharacterBody2D" unique_id=807088777]
+position = Vector2(18, -17)
+shape = SubResource("RectangleShape2D_3hls8")
